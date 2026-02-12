@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # Add title and description
-st.title("House Price Prediction - v2")
+st.title("House Price Prediction")
 st.markdown(
     """
     <p style="font-size: 18px; color: gray;">
@@ -82,7 +82,7 @@ with col2:
                 api_endpoint = os.getenv("API_URL", "http://model:8000")
                 predict_url = f"{api_endpoint.rstrip('/')}/predict"
                 
-                st.write(f"Connecting to API at: {predict_url}")
+                #st.write(f"Connecting to API at: {predict_url}")
                 
                 # Make API call to FastAPI backend
                 response = requests.post(predict_url, json=api_data)
@@ -171,8 +171,8 @@ st.markdown("<hr>", unsafe_allow_html=True)  # Add a horizontal line for separat
 st.markdown(
     """
     <div style="text-align: center; color: gray; margin-top: 20px;">
-        <p><strong>Built for MLOps Bootcamp</strong></p>
-        <p>by <a href="https://www.schoolofdevops.com" target="_blank">School of Devops</a></p>
+        <p><strong>DevOps to MLOps</strong></p>
+        <p>Artical <a href="https://medium.com/nerd-for-tech/devops-to-mlops-a-career-transition-guide-for-professionals-51ab1ceb4b2d" target="_blank">DevOps to MLOps Tranistion</a></p>
     </div>
     """,
     unsafe_allow_html=True,

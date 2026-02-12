@@ -1,6 +1,6 @@
 services: 
   fastapi: 
-    image: initcron/fastapi:dev  
+    image: zunairmlops/house-prediction-fastapi:dev  
     build: 
       context: .
       dockerfile: Dockerfile
@@ -8,7 +8,7 @@ services:
       - 8888:8000
 
   streamlit: 
-    image: initcron/streamlit:dev
+    image: zunairmlops/house-prediction-streamlit:dev
     build:
       context: ./streamlit_app
       dockerfile: Dockerfile
