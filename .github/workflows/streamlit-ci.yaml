@@ -30,4 +30,4 @@ jobs:
           context: ./streamlit_app
           push: true
           tags: docker.io/${{ vars.DOCKERHUB_USERNAME }}/streamlit:latest
-          platforms: linux/amd64,linux/arm64
+          #platforms: linux/amd64,linux/arm64
