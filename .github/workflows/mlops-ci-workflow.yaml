@@ -1,10 +1,10 @@
-name: MLops CI
+name: MLops Workflow CI Pipeline 
 
 on:
   workflow_dispatch: {}
   
 jobs:
-  e2e_mlops_workflow:
+  mlops_workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11.5'
+          python-version: '3.13.11'
 
       - name: Install dependencies
         run: |
@@ -26,7 +26,7 @@ jobs:
             --input data/raw/house_data.csv \
             --output data/processed/cleaned_house_data.csv
 
-      - name: Do Feature Engineering
+      - name: Feature Engineering
         run: |
           python src/features/engineer.py  \
            --input data/processed/cleaned_house_data.csv \
@@ -69,7 +69,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: initcron/fastapi:${{ github.sha }}
+          tags: zunairmlops/fastapi:${{ github.sha }}
           context: "."
           file: "Dockerfile"
 
